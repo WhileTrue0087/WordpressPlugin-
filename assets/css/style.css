@@ -1,0 +1,117 @@
+/* استایل‌های داشبورد افزونه Gravity Registration Dashboard */
+
+.grd-dashboard-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.grd-dashboard-container h2 {
+    text-align: center;
+    color: #333;
+}
+
+.grd-dashboard-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.grd-dashboard-menu li {
+    margin: 5px 10px;
+}
+
+.grd-dashboard-menu li a {
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #0073aa;
+    color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.grd-dashboard-menu li a:hover {
+    background-color: #005177;
+}
+
+.grd-dashboard-content {
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.grd-dashboard-content h3 {
+    margin-top: 0;
+    color: #0073aa;
+}
+
+.grd-dashboard-content p {
+    line-height: 1.6;
+}
+
+/* استایل فرم‌های داخل داشبورد */
+.grd-dashboard-content form p {
+    margin-bottom: 15px;
+}
+
+.grd-dashboard-content form input[type="text"],
+.grd-dashboard-content form textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.grd-dashboard-content form input[type="submit"] {
+    background-color: #0073aa;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.grd-dashboard-content form input[type="submit"]:hover {
+    background-color: #005177;
+}
+
+.notice {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.notice-success {
+    background-color: #dff0d8;
+    color: #3c763d;
+}
+
+.notice-error {
+    background-color: #f2dede;
+    color: #a94442;
+}
+
+/* طراحی واکنشگرا */
+@media (max-width: 768px) {
+    .grd-dashboard-menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .grd-dashboard-menu li {
+        margin: 10px 0;
+    }
+    .grd-dashboard-container {
+        padding: 15px;
+        margin: 10px;
+    }
+}
