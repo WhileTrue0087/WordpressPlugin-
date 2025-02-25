@@ -1,117 +1,158 @@
-/* استایل‌های داشبورد افزونه Gravity Registration Dashboard */
-
+/* -------------------------------
+   سبک کلی داشبورد (container)
+--------------------------------- */
 .grd-dashboard-container {
-    max-width: 800px;
+    width: 100%;
+    max-width: 1200px;
     margin: 20px auto;
-    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
 }
 
-.grd-dashboard-container h2 {
+/* -------------------------------
+   بخش بالایی (Header) - خوش‌آمدگویی
+--------------------------------- */
+.grd-dashboard-header {
+    background: linear-gradient(135deg, #4CAF50, #81C784);
+    color: #fff;
+    padding: 20px;
     text-align: center;
+}
+
+.grd-dashboard-header h2 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.grd-dashboard-header p {
+    margin: 5px 0 0;
+    font-size: 16px;
+}
+
+/* -------------------------------
+   ساختار بدنه داشبورد
+--------------------------------- */
+.grd-dashboard-body {
+    display: flex;
+}
+
+/* منوی تب‌ها - ستون عمودی */
+.grd-dashboard-menu {
+    width: 250px;
+    background: #f8f8f8;
+    border-right: 1px solid #ddd;
+}
+
+.grd-tabs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.grd-tab-link {
+    display: block;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
     color: #333;
 }
 
-.grd-dashboard-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.grd-tab-link:hover {
+    background-color: #e0e0e0;
 }
 
-.grd-dashboard-menu li {
-    margin: 5px 10px;
-}
-
-.grd-dashboard-menu li a {
-    text-decoration: none;
-    padding: 10px 15px;
-    background-color: #0073aa;
+.grd-tab-link.active {
+    background-color: #4CAF50;
     color: #fff;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
 }
 
-.grd-dashboard-menu li a:hover {
-    background-color: #005177;
-}
-
+/* محتوای تب‌ها */
 .grd-dashboard-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.grd-tab-content {
+    display: none;
+}
+
+.grd-tab-content.active {
+    display: block;
+}
+
+/* استایل لیست آگهی‌ها */
+/* استایل آیتم‌های لیست آگهی‌های من */
+.user-ads-list li {
+    background: linear-gradient(135deg, #66bb6a, #43a047);
+    color: white;
     padding: 15px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.2s ease-in-out;
 }
 
-.grd-dashboard-content h3 {
-    margin-top: 0;
-    color: #0073aa;
+.user-ads-list li:hover {
+    transform: scale(1.02);
 }
 
-.grd-dashboard-content p {
-    line-height: 1.6;
+.user-ads-list li a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    flex-grow: 1;
 }
 
-/* استایل فرم‌های داخل داشبورد */
-.grd-dashboard-content form p {
-    margin-bottom: 15px;
+.user-ads-list li a:hover {
+    text-decoration: underline;
 }
 
-.grd-dashboard-content form input[type="text"],
-.grd-dashboard-content form textarea {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+/* استایل تصویر شاخص */
+.user-ads-list img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 15px;
 }
 
-.grd-dashboard-content form input[type="submit"] {
-    background-color: #0073aa;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
+/* دکمه‌های ویرایش و حذف */
+.user-ads-list .ad-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.user-ads-list .edit-ad,
+.user-ads-list .delete-ad {
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
     cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+    transition: background 0.3s;
 }
 
-.grd-dashboard-content form input[type="submit"]:hover {
-    background-color: #005177;
+.user-ads-list .edit-ad {
+    background: #ffd54f;
+    color: #333;
+    border: none;
 }
 
-.notice {
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 4px;
+.user-ads-list .edit-ad:hover {
+    background: #ffb300;
 }
 
-.notice-success {
-    background-color: #dff0d8;
-    color: #3c763d;
+.user-ads-list .delete-ad {
+    background: #e53935;
+    color: white;
+    border: none;
 }
 
-.notice-error {
-    background-color: #f2dede;
-    color: #a94442;
+.user-ads-list .delete-ad:hover {
+    background: #c62828;
 }
 
-/* طراحی واکنشگرا */
-@media (max-width: 768px) {
-    .grd-dashboard-menu ul {
-        flex-direction: column;
-        align-items: center;
-    }
-    .grd-dashboard-menu li {
-        margin: 10px 0;
-    }
-    .grd-dashboard-container {
-        padding: 15px;
-        margin: 10px;
-    }
-}
